@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essentia Serpentis Arcana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050508; 
+            --purple: #4A0E8F; 
+            --blood: #8B0000; 
+            --gold: #C9A84C; 
+            --cream: #F0E6D3;
+        }
+        body { 
+            background: var(--bg); 
+            color: var(--cream); 
+            font-family: 'IM Fell English', serif; 
+            margin: 0; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        /* Núcleo de la Serpiente */
+        .serpent-wrapper {
+            position: relative; 
+            width: 250px; 
+            height: 250px; 
+            margin: 40px auto;
+            border-radius: 50%; 
+            padding: 4px; 
+            background: linear-gradient(var(--purple), var(--blood));
+            animation: rotate 4s linear infinite; 
+            mask: radial-gradient(circle, transparent 60%, black 61%);
+            -webkit-mask: radial-gradient(circle, transparent 60%, black 61%);
+        }
+        @keyframes rotate { 
+            from { transform: rotate(0deg); } 
+            to { transform: rotate(360deg); } 
+        }
+        
+        /* Tipografía y Cajas */
+        .hero { text-align: center; padding: 20px; width: 100%; max-width: 600px; }
+        h1 { font-family: 'Cinzel Decorative', cursive; color: var(--gold); font-size: 2.2rem; margin-top: 0; }
+        h3 { font-family: 'Cinzel', serif; color: var(--gold); }
+        
+        .card { 
+            background: rgba(20, 20, 25, 0.9); 
+            border: 1px solid var(--purple); 
+            padding: 30px; 
+            margin: 20px auto; 
+            width: 90%;
+            max-width: 400px; 
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(74, 14, 143, 0.2);
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+        
+        /* Botón de Pacto */
+        .btn-pay {
+            display: block; 
+            width: 100%; 
+            padding: 16px 0;
+            margin-top: 25px;
+            background: linear-gradient(45deg, var(--blood), var(--purple)); 
+            color: var(--cream); 
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: center; 
+            text-decoration: none; 
+            border-radius: 8px;
+            border: 1px solid var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="serpent-wrapper"></div>
+        <h1>Essentia Serpentis Arcana</h1>
+        <p style="font-size: 1.2rem; color: #a1a1aa;">El saber oculto, transmutado para tu realidad.</p>
+    </header>
+
+    <section style="width: 100%; display: flex; justify-content: center;">
+        <div class="card">
+            <h3>Evaluación Inicial</h3>
+            <p style="font-size: 1.2rem;">Inversión: <strong style="color: var(--gold);">USD $5</strong></p>
+            <p style="line-height: 1.6; color: #d1d5db;">Diagnóstico arcano profundo y determinación exacta de tu ruta de trabajo.</p>
+            
+            <a href="https://wa.me/5491158409086?text=Hola,%20deseo%20iniciar%20mi%20evaluaci%C3%B3n%20en%20Essentia%20Serpentis%20Arcana." class="btn-pay">Iniciar Pacto</a>
+        </div>
+    </section>
+
+</body>
+</html>
