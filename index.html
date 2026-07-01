@@ -7,7 +7,7 @@
     <!-- Runas de Identidad Dimensional (Open Graph) -->
     <title>Essentia Serpentis Arcana | Evaluación Inicial</title>
     <meta property="og:title" content="Essentia Serpentis Arcana">
-    <meta property="og:description" content="El saber oculto, transmutado para tu realidad. Inicia tu diagnóstico arcano profundo y traza tu ruta de trabajo.">
+    <meta property="og:description" content="El saber oculto, transmutado para tu realidad. Inicia tu diagnóstico arcano y accede al círculo de trabajo.">
     <meta property="og:image" content="https://essentia-serpentis-arcana.vercel.app/assets/og-image.jpg">
     <meta property="og:url" content="https://essentia-serpentis-arcana.vercel.app">
     <meta property="og:type" content="website">
@@ -50,6 +50,7 @@
             --blood: #8B0000; 
             --gold: #C9A84C; 
             --cream: #F0E6D3;
+            --locked: #2a2a35;
         }
         body { 
             background: var(--bg); 
@@ -81,19 +82,35 @@
         
         .hero { text-align: center; padding: 20px; width: 100%; max-width: 600px; }
         h1 { font-family: 'Cinzel Decorative', cursive; color: var(--gold); font-size: 2.2rem; margin-top: 0; }
-        h3 { font-family: 'Cinzel', serif; color: var(--gold); }
+        h3 { font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 5px; }
         
+        .funnel-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            gap: 20px;
+            padding-bottom: 40px;
+        }
+
         .card { 
             background: rgba(20, 20, 25, 0.9); 
             border: 1px solid var(--purple); 
             padding: 30px; 
-            margin: 20px auto; 
             width: 90%;
             max-width: 400px; 
             border-radius: 12px;
             box-shadow: 0 0 20px rgba(74, 14, 143, 0.2);
             transition: all 0.3s ease;
             box-sizing: border-box;
+        }
+
+        .card.locked {
+            border: 1px solid #444;
+            background: rgba(15, 15, 18, 0.9);
+            box-shadow: none;
+            opacity: 0.8;
+            text-align: center;
         }
         
         .btn-pay {
@@ -117,12 +134,13 @@
 
         .copyright-footer {
             margin-top: auto;
-            padding: 40px 20px 20px 20px;
+            padding: 20px 20px 40px 20px;
             text-align: center;
             font-family: 'Cinzel', serif;
             color: #6b7280;
             font-size: 0.9rem;
             line-height: 1.8;
+            width: 100%;
         }
         
         .solvens-font {
@@ -133,6 +151,19 @@
             vertical-align: middle;
             text-shadow: 0 0 5px rgba(240, 230, 211, 0.2);
         }
+
+        .badge {
+            background: var(--blood);
+            color: var(--cream);
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -140,26 +171,35 @@
     <header class="hero">
         <div class="serpent-wrapper"></div>
         <h1>Essentia Serpentis Arcana</h1>
-        <p style="font-size: 1.2rem; color: #a1a1aa;">El saber oculto, transmutado para tu realidad.</p>
+        <p style="font-size: 1.2rem; color: #a1a1aa;">El saber oculto, transmutado para tu realidad digital.</p>
     </header>
 
-    <section style="width: 100%; display: flex; justify-content: center;">
+    <section class="funnel-container">
+        
+        <!-- Fase 1: El Tripwire (Evaluación) -->
         <div class="card">
-            <h3>Evaluación Inicial</h3>
+            <span class="badge">Paso 1: El Umbral</span>
+            <h3>Evaluación Inicial (PDF)</h3>
             <p style="font-size: 1.2rem;">Inversión: <strong style="color: var(--gold);">USD $5</strong></p>
-            <p style="line-height: 1.6; color: #d1d5db;">Diagnóstico arcano profundo y determinación exacta de tu ruta de trabajo.</p>
+            <p style="line-height: 1.6; color: #d1d5db;">Diagnóstico asíncrono y profundo. Envía tu nudo y recibe tu <strong>Reporte Arcano en documento sellado</strong> para entender la raíz de tu sombra.</p>
             
-            <!-- Botón de Convergencia: WhatsApp -->
             <a href="https://wa.me/5491158409086?text=%2FINICIAR_PACTO%20Saludos.%20He%20despertado%20al%20llamado.%20Deseo%20comenzar%20mi%20Evaluaci%C3%B3n%20Inicial." 
                class="btn-pay" 
                onclick="registrarConvergencia('whatsapp')">Iniciar Pacto (WhatsApp)</a>
 
-            <!-- Botón de Convergencia: PayPal -->
             <a href="#ENLACE_DE_PAYPAL_AQUI" 
                class="btn-pay" 
                style="background: linear-gradient(45deg, #003087, #0079C1); color: #ffffff; margin-top: 15px; border-color: #0079C1;"
                onclick="registrarConvergencia('paypal')">Pago Directo (PayPal)</a>
         </div>
+
+        <!-- Fase 2: El High-Ticket (Videollamadas) -->
+        <div class="card locked">
+            <span class="badge" style="background: #444; color: #aaa;">Paso 2: Transmutación</span>
+            <h3 style="color: #888;">Círculo de Trabajo 1-a-1</h3>
+            <p style="line-height: 1.6; color: #888; font-style: italic;">Acceso a sesiones de sanación privada por videollamada.<br><br><strong>Condición:</strong> El acceso a la agenda de la Maestra es restringido y solo se libera por invitación tras concluir y analizar la Evaluación Inicial.</p>
+        </div>
+
     </section>
 
     <!-- Firma con Llave Oculta -->
@@ -182,7 +222,6 @@
 
     <!-- Lógica del Núcleo y el Sigilo -->
     <script>
-        // Runa de Telemetría
         function registrarConvergencia(origen) {
             let evento = origen === 'whatsapp' ? 'inicio_pacto_wa' : 'inicio_pacto_paypal';
             if(typeof gtag === 'function') gtag('event', 'conversion', {'event_name': evento});
@@ -190,7 +229,6 @@
             console.log("Sello de conversión registrado: " + origen);
         }
 
-        // Lógica del Sigilo Oculto
         let toques = 0;
         let temporizador;
         const llave = document.getElementById('llave-maestra');
@@ -200,13 +238,11 @@
             toques++;
             clearTimeout(temporizador);
             
-            // Si toca 3 veces, se revela el mensaje
             if (toques === 3) {
                 velo.style.transition = 'opacity 2s ease, z-index 0s';
                 velo.style.zIndex = '9999';
                 velo.style.opacity = '1';
                 
-                // El velo se disuelve después de 8 segundos
                 setTimeout(() => {
                     velo.style.transition = 'opacity 2s ease, z-index 0s 2s';
                     velo.style.opacity = '0';
@@ -215,7 +251,6 @@
                 }, 8000);
             }
             
-            // Reiniciar el contador si no completa los 3 toques rápido
             temporizador = setTimeout(() => { toques = 0; }, 1500);
         });
     </script>
