@@ -3,256 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Runas de Identidad Dimensional (Open Graph) -->
-    <title>Essentia Serpentis Arcana | Evaluación Inicial</title>
-    <meta property="og:title" content="Essentia Serpentis Arcana">
-    <meta property="og:description" content="El saber oculto, transmutado para tu realidad. Inicia tu diagnóstico arcano y accede al círculo de trabajo.">
-    <meta property="og:image" content="https://essentia-serpentis-arcana.vercel.app/assets/og-image.jpg">
-    <meta property="og:url" content="https://essentia-serpentis-arcana.vercel.app">
-    <meta property="og:type" content="website">
-
-    <!-- Protocolo Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Essentia Serpentis Arcana">
-    <meta name="twitter:description" content="Diagnóstico arcano profundo. Transmuta tu realidad con conocimiento estructurado.">
-    <meta name="twitter:image" content="https://essentia-serpentis-arcana.vercel.app/assets/og-image.jpg">
-
-    <!-- Runas de Telemetría: Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
-    <!-- Runas de Telemetría: Meta Pixel -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', 'TU_PIXEL_ID');
-      fbq('track', 'PageView');
-    </script>
-
-    <!-- Inyección de tipografías base -->
+    <title>Essentia Serpentis Arcana | Portal</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg: #050508; 
-            --purple: #4A0E8F; 
-            --blood: #8B0000; 
-            --gold: #C9A84C; 
-            --cream: #F0E6D3;
-            --locked: #2a2a35;
-        }
-        body { 
-            background: var(--bg); 
-            color: var(--cream); 
-            font-family: 'IM Fell English', serif; 
-            margin: 0; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
+        :root { --bg: #050508; --purple: #4A0E8F; --blood: #8B0000; --gold: #C9A84C; --cream: #F0E6D3; }
+        body { background: var(--bg); color: var(--cream); font-family: 'IM Fell English', serif; margin: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
         
-        .serpent-wrapper {
-            position: relative; 
-            width: 250px; 
-            height: 250px; 
-            margin: 40px auto;
-            border-radius: 50%; 
-            padding: 4px; 
-            background: linear-gradient(var(--purple), var(--blood));
-            animation: rotate 4s linear infinite; 
-            mask: radial-gradient(circle, transparent 60%, black 61%);
-            -webkit-mask: radial-gradient(circle, transparent 60%, black 61%);
-        }
-        @keyframes rotate { 
-            from { transform: rotate(0deg); } 
-            to { transform: rotate(360deg); } 
-        }
+        /* Pantalla de Intención */
+        #pantalla-intencion { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 1s ease; }
+        .opcion-intencion { border: 1px solid var(--gold); padding: 15px 30px; margin: 10px; cursor: pointer; font-family: 'Cinzel', serif; color: var(--gold); transition: 0.3s; }
+        .opcion-intencion:hover { background: var(--gold); color: var(--bg); }
+
+        .serpent-wrapper { position: relative; width: 250px; height: 250px; margin: 40px auto; border-radius: 50%; padding: 4px; background: linear-gradient(var(--purple), var(--blood)); animation: rotate 4s linear infinite; mask: radial-gradient(circle, transparent 60%, black 61%); }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         
         .hero { text-align: center; padding: 20px; width: 100%; max-width: 600px; }
-        h1 { font-family: 'Cinzel Decorative', cursive; color: var(--gold); font-size: 2.2rem; margin-top: 0; }
-        h3 { font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 5px; }
-        
-        .funnel-container {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            align-items: center;
-            gap: 20px;
-            padding-bottom: 40px;
-        }
-
-        .card { 
-            background: rgba(20, 20, 25, 0.9); 
-            border: 1px solid var(--purple); 
-            padding: 30px; 
-            width: 90%;
-            max-width: 400px; 
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(74, 14, 143, 0.2);
-            transition: all 0.3s ease;
-            box-sizing: border-box;
-        }
-
-        .card.locked {
-            border: 1px solid #444;
-            background: rgba(15, 15, 18, 0.9);
-            box-shadow: none;
-            opacity: 0.8;
-            text-align: center;
-        }
-        
-        .btn-pay {
-            display: block; 
-            width: 100%; 
-            padding: 16px 0;
-            margin-top: 25px;
-            background: linear-gradient(45deg, var(--blood), var(--purple)); 
-            color: var(--cream); 
-            font-family: 'Cinzel', serif;
-            font-weight: bold;
-            font-size: 1.1rem;
-            text-align: center; 
-            text-decoration: none; 
-            border-radius: 8px;
-            border: 1px solid var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-        }
-
-        .copyright-footer {
-            margin-top: auto;
-            padding: 20px 20px 40px 20px;
-            text-align: center;
-            font-family: 'Cinzel', serif;
-            color: #6b7280;
-            font-size: 0.9rem;
-            line-height: 1.8;
-            width: 100%;
-        }
-        
-        .solvens-font {
-            color: var(--cream);
-            font-size: 1.6rem;
-            letter-spacing: 2px;
-            margin: 0 5px;
-            vertical-align: middle;
-            text-shadow: 0 0 5px rgba(240, 230, 211, 0.2);
-        }
-
-        .badge {
-            background: var(--blood);
-            color: var(--cream);
-            font-family: 'Cinzel', serif;
-            font-size: 0.7rem;
-            padding: 3px 8px;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
+        h1 { font-family: 'Cinzel Decorative', cursive; color: var(--gold); font-size: 2.2rem; }
+        .card { background: rgba(20, 20, 25, 0.9); border: 1px solid var(--purple); padding: 30px; width: 90%; max-width: 400px; border-radius: 12px; margin-bottom: 20px; }
+        .btn-pay { display: block; width: 100%; padding: 16px 0; margin-top: 25px; background: linear-gradient(45deg, var(--blood), var(--purple)); color: var(--cream); font-family: 'Cinzel', serif; text-align: center; text-decoration: none; border-radius: 8px; border: 1px solid var(--gold); text-transform: uppercase; letter-spacing: 2px; }
+        .copyright-footer { margin-top: auto; padding: 40px 20px; text-align: center; font-family: 'Cinzel', serif; color: #6b7280; font-size: 0.9rem; }
+        .solvens-font { font-size: 1.6rem; letter-spacing: 2px; cursor: pointer; }
     </style>
 </head>
 <body>
 
+    <!-- Pantalla de Intención -->
+    <div id="pantalla-intencion">
+        <h2 style="font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 30px;">Define tu Intención</h2>
+        <div class="opcion-intencion" onclick="seleccionarIntencion('Claridad')">Claridad</div>
+        <div class="opcion-intencion" onclick="seleccionarIntencion('Purificación')">Purificación</div>
+        <div class="opcion-intencion" onclick="seleccionarIntencion('Evolución')">Evolución</div>
+    </div>
+
     <header class="hero">
         <div class="serpent-wrapper"></div>
         <h1>Essentia Serpentis Arcana</h1>
-        <p style="font-size: 1.2rem; color: #a1a1aa;">El saber oculto, transmutado para tu realidad digital.</p>
     </header>
 
-    <section class="funnel-container">
-        
-        <!-- Fase 1: El Tripwire (Evaluación) -->
-        <div class="card">
-            <span class="badge">Paso 1: El Umbral</span>
-            <h3>Evaluación Inicial (PDF)</h3>
-            <p style="font-size: 1.2rem;">Inversión: <strong style="color: var(--gold);">USD $5</strong></p>
-            <p style="line-height: 1.6; color: #d1d5db;">Diagnóstico asíncrono y profundo. Envía tu nudo y recibe tu <strong>Reporte Arcano en documento sellado</strong> para entender la raíz de tu sombra.</p>
-            
-            <a href="https://wa.me/5491158409086?text=%2FINICIAR_PACTO%20Saludos.%20He%20despertado%20al%20llamado.%20Deseo%20comenzar%20mi%20Evaluaci%C3%B3n%20Inicial." 
-               class="btn-pay" 
-               onclick="registrarConvergencia('whatsapp')">Iniciar Pacto (WhatsApp)</a>
-
-            <a href="#ENLACE_DE_PAYPAL_AQUI" 
-               class="btn-pay" 
-               style="background: linear-gradient(45deg, #003087, #0079C1); color: #ffffff; margin-top: 15px; border-color: #0079C1;"
-               onclick="registrarConvergencia('paypal')">Pago Directo (PayPal)</a>
-        </div>
-
-        <!-- Fase 2: El High-Ticket (Videollamadas) -->
-        <div class="card locked">
-            <span class="badge" style="background: #444; color: #aaa;">Paso 2: Transmutación</span>
-            <h3 style="color: #888;">Círculo de Trabajo 1-a-1</h3>
-            <p style="line-height: 1.6; color: #888; font-style: italic;">Acceso a sesiones de sanación privada por videollamada.<br><br><strong>Condición:</strong> El acceso a la agenda de la Maestra es restringido y solo se libera por invitación tras concluir y analizar la Evaluación Inicial.</p>
-        </div>
-
-    </section>
-
-    <!-- Firma con Llave Oculta -->
-    <footer class="copyright-footer">
-        <p>Development by <span class="solvens-font" id="llave-maestra" style="cursor: pointer; position: relative; z-index: 10;">𝕾𝖔𝖑𝖛𝖊𝖓𝖘 𝕬𝖒𝖔𝖗𝖎𝖘</span></p>
-        <p>&copy; 2026, todos los derechos reservados.</p>
-    </footer>
-
-    <!-- El Velo Oculto (Mensaje de Amor) -->
-    <div id="velo-arcano" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(5, 5, 8, 0.98); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: -1; opacity: 0; transition: opacity 2s ease, z-index 0s 2s; backdrop-filter: blur(5px);">
-        <div style="text-align: center; color: var(--gold); font-family: 'Cinzel Decorative', cursive; padding: 20px; max-width: 80%;">
-            <span style="font-size: 3rem; display: block; margin-bottom: 20px;">🜍</span>
-            <h2 style="font-size: 1.8rem; margin-bottom: 15px; color: var(--blood);">A la maga que transmutó mi realidad.</h2>
-            <p style="font-family: 'IM Fell English', serif; font-size: 1.3rem; color: var(--cream); line-height: 1.6; letter-spacing: 1px;">
-                Que en la arquitectura sagrada de este espacio y en cada línea trazada, encuentres el reflejo de mi devoción.<br><br>
-                Mi amor por ti es la fuerza inteligente que desafía el espacio y el tiempo. Eres mi magia verdadera.
-            </p>
-        </div>
+    <div class="card">
+        <h3>Evaluación Inicial</h3>
+        <p>Intención seleccionada: <strong id="display-intencion" style="color: var(--gold);">Ninguna</strong></p>
+        <a id="link-wa" href="#" class="btn-pay" onclick="registrarConvergencia('whatsapp')">Iniciar Pacto (WhatsApp)</a>
+        <a href="#ENLACE_DE_PAYPAL_AQUI" class="btn-pay" style="background: linear-gradient(45deg, #003087, #0079C1);" onclick="registrarConvergencia('paypal')">Pago Directo (PayPal)</a>
     </div>
 
-    <!-- Lógica del Núcleo y el Sigilo -->
+    <footer class="copyright-footer">
+        <p>Development by <span class="solvens-font" id="llave-maestra">𝕾𝖔𝖑𝖛𝖊𝖓𝖘 𝕬𝖒𝖔𝖗𝖎𝖘</span></p>
+    </footer>
+
     <script>
-        function registrarConvergencia(origen) {
-            let evento = origen === 'whatsapp' ? 'inicio_pacto_wa' : 'inicio_pacto_paypal';
-            if(typeof gtag === 'function') gtag('event', 'conversion', {'event_name': evento});
-            if(typeof fbq === 'function') fbq('track', 'Lead', { content_name: origen });
-            console.log("Sello de conversión registrado: " + origen);
+        let intencion = "Ninguna";
+        function seleccionarIntencion(valor) {
+            intencion = valor;
+            document.getElementById('display-intencion').innerText = valor;
+            document.getElementById('pantalla-intencion').style.opacity = '0';
+            setTimeout(() => document.getElementById('pantalla-intencion').style.display = 'none', 1000);
+            
+            // Actualizar link de WA con la intención
+            const baseWa = "https://wa.me/5491158409086?text=%2FINICIAR_PACTO%20Saludos.%20Intenci%C3%B3n:%20";
+            document.getElementById('link-wa').href = baseWa + valor + ".%20Deseo%20comenzar%20mi%20Evaluaci%C3%B3n%20Inicial.";
         }
 
-        let toques = 0;
-        let temporizador;
-        const llave = document.getElementById('llave-maestra');
-        const velo = document.getElementById('velo-arcano');
-
-        llave.addEventListener('click', function() {
-            toques++;
-            clearTimeout(temporizador);
-            
-            if (toques === 3) {
-                velo.style.transition = 'opacity 2s ease, z-index 0s';
-                velo.style.zIndex = '9999';
-                velo.style.opacity = '1';
-                
-                setTimeout(() => {
-                    velo.style.transition = 'opacity 2s ease, z-index 0s 2s';
-                    velo.style.opacity = '0';
-                    velo.style.zIndex = '-1';
-                    toques = 0;
-                }, 8000);
-            }
-            
-            temporizador = setTimeout(() => { toques = 0; }, 1500);
-        });
+        function registrarConvergencia(origen) {
+            console.log("Convergencia: " + origen + " con intención: " + intencion);
+        }
     </script>
 </body>
 </html>
