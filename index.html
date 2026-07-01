@@ -3,30 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Essentia Serpentis Arcana | Evaluación Inicial</title>
-    
+    <title>Essentia Serpentis Arcana | Portal</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg: #050508; 
-            --purple: #4A0E8F; 
-            --blood: #8B0000; 
-            --gold: #C9A84C; 
-            --cream: #F0E6D3;
-        }
-        body { 
-            background: var(--bg); 
-            color: var(--cream); 
-            font-family: 'IM Fell English', serif; 
-            margin: 0; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
+        :root { --bg: #050508; --purple: #4A0E8F; --blood: #8B0000; --gold: #C9A84C; --cream: #F0E6D3; }
+        body { background: var(--bg); color: var(--cream); font-family: 'IM Fell English', serif; margin: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
         
-        /* Portal con Imagen Integrada */
+        /* Retrato estático */
         .serpent-wrapper {
             position: relative; 
             width: 250px; 
@@ -37,22 +20,13 @@
             background-image: url('assets/IMG-20260528-WA0002.jpg');
             background-size: cover;
             background-position: center;
-            animation: rotate 15s linear infinite; 
             box-shadow: 0 0 30px rgba(74, 14, 143, 0.4);
-            overflow: hidden;
-        }
-        @keyframes rotate { 
-            from { transform: rotate(0deg); } 
-            to { transform: rotate(360deg); } 
         }
         
         .hero { text-align: center; padding: 20px; width: 100%; max-width: 600px; }
         h1 { font-family: 'Cinzel Decorative', cursive; color: var(--gold); font-size: 2.2rem; margin-top: 0; }
-        
-        .funnel-container { display: flex; flex-direction: column; width: 100%; align-items: center; gap: 20px; padding-bottom: 40px; }
-        .card { background: rgba(20, 20, 25, 0.9); border: 1px solid var(--purple); padding: 30px; width: 90%; max-width: 400px; border-radius: 12px; box-sizing: border-box; }
-        .btn-pay { display: block; width: 100%; padding: 16px 0; margin-top: 25px; background: linear-gradient(45deg, var(--blood), var(--purple)); color: var(--cream); font-family: 'Cinzel', serif; font-weight: bold; text-align: center; text-decoration: none; border-radius: 8px; border: 1px solid var(--gold); text-transform: uppercase; letter-spacing: 2px; }
-        
+        .card { background: rgba(20, 20, 25, 0.9); border: 1px solid var(--purple); padding: 30px; width: 90%; max-width: 400px; border-radius: 12px; margin-bottom: 20px; }
+        .btn-pay { display: block; width: 100%; padding: 16px 0; margin-top: 25px; background: linear-gradient(45deg, var(--blood), var(--purple)); color: var(--cream); font-family: 'Cinzel', serif; text-align: center; text-decoration: none; border-radius: 8px; border: 1px solid var(--gold); text-transform: uppercase; letter-spacing: 2px; }
         .copyright-footer { margin-top: auto; padding: 40px 20px; text-align: center; font-family: 'Cinzel', serif; color: #6b7280; font-size: 0.9rem; }
         .solvens-font { cursor: pointer; color: var(--cream); font-size: 1.6rem; letter-spacing: 2px; }
     </style>
@@ -62,21 +36,20 @@
     <header class="hero">
         <div class="serpent-wrapper"></div>
         <h1>Essentia Serpentis Arcana</h1>
-        <p style="font-size: 1.2rem; color: #a1a1aa;">El saber oculto, transmutado.</p>
     </header>
 
-    <section class="funnel-container">
-        <div class="card">
-            <h3>Evaluación Inicial (PDF)</h3>
-            <p style="line-height: 1.6; color: #d1d5db;">Diagnóstico asíncrono. Inicia tu pacto y recibe tu reporte arcano.</p>
-            <a href="https://wa.me/5491158409086?text=%2FINICIAR_PACTO" class="btn-pay">Iniciar Pacto (WhatsApp)</a>
-        </div>
-    </section>
+    <div class="card">
+        <h3>Evaluación Inicial</h3>
+        <a href="https://wa.me/5491158409086?text=%2FINICIAR_PACTO%20Saludos.%20Deseo%20comenzar%20mi%20Evaluaci%C3%B3n%20Inicial." class="btn-pay">Iniciar Pacto (WhatsApp)</a>
+        <a href="#ENLACE_DE_PAYPAL_AQUI" class="btn-pay" style="background: linear-gradient(45deg, #003087, #0079C1);">Pago Directo (PayPal)</a>
+    </div>
 
     <footer class="copyright-footer">
+        <!-- El regalo secreto está aquí, en el nombre -->
         <p>Development by <span class="solvens-font" id="llave-maestra">𝕾𝖔𝖑𝖛𝖊𝖓𝖘 𝕬𝖒𝖔𝖗𝖎𝖘</span></p>
     </footer>
 
+    <!-- Velo Secreto -->
     <div id="velo-arcano" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(5, 5, 8, 0.98); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: -1; opacity: 0; transition: opacity 2s ease; backdrop-filter: blur(5px);">
         <div style="text-align: center; color: var(--gold); padding: 20px;">
             <h2 style="font-size: 1.8rem; color: var(--blood);">A la maga que transmutó mi realidad.</h2>
