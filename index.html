@@ -4,6 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Essentia Serpentis Arcana</title>
+    
+    <!-- Runas de Telemetría: Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Runas de Telemetría: Meta Pixel -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'TU_PIXEL_ID');
+      fbq('track', 'PageView');
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -24,7 +48,6 @@
             min-height: 100vh;
         }
         
-        /* Núcleo de la Serpiente */
         .serpent-wrapper {
             position: relative; 
             width: 250px; 
@@ -42,7 +65,6 @@
             to { transform: rotate(360deg); } 
         }
         
-        /* Tipografía y Cajas */
         .hero { text-align: center; padding: 20px; width: 100%; max-width: 600px; }
         h1 { font-family: 'Cinzel Decorative', cursive; color: var(--gold); font-size: 2.2rem; margin-top: 0; }
         h3 { font-family: 'Cinzel', serif; color: var(--gold); }
@@ -60,7 +82,6 @@
             box-sizing: border-box;
         }
         
-        /* Botón de Pacto */
         .btn-pay {
             display: block; 
             width: 100%; 
@@ -77,6 +98,7 @@
             border: 1px solid var(--gold);
             text-transform: uppercase;
             letter-spacing: 2px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -94,9 +116,26 @@
             <p style="font-size: 1.2rem;">Inversión: <strong style="color: var(--gold);">USD $5</strong></p>
             <p style="line-height: 1.6; color: #d1d5db;">Diagnóstico arcano profundo y determinación exacta de tu ruta de trabajo.</p>
             
-            <a href="https://wa.me/5491158409086?text=Hola,%20deseo%20iniciar%20mi%20evaluaci%C3%B3n%20en%20Essentia%20Serpentis%20Arcana." class="btn-pay">Iniciar Pacto</a>
+            <!-- Botón con Interceptor de Convergencia -->
+            <a href="https://wa.me/5491158409086?text=Hola,%20deseo%20iniciar%20mi%20evaluaci%C3%B3n%20en%20Essentia%20Serpentis%20Arcana." 
+               class="btn-pay" 
+               onclick="registrarConvergencia()">Iniciar Pacto</a>
         </div>
     </section>
 
+    <!-- Lógica del Núcleo Analítico -->
+    <script>
+        function registrarConvergencia() {
+            // Emisión de señal a Google Analytics
+            if(typeof gtag === 'function') {
+                gtag('event', 'conversion', {'event_name': 'inicio_pacto'});
+            }
+            // Emisión de señal a Meta (Facebook)
+            if(typeof fbq === 'function') {
+                fbq('track', 'Lead');
+            }
+            console.log("Sello de conversión registrado.");
+        }
+    </script>
 </body>
 </html>
