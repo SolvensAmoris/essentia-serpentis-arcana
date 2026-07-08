@@ -111,9 +111,10 @@
   .arcanos__grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px; max-width:1000px; margin:0 auto; text-align:left; }
   .arcano-card{
     background:linear-gradient(160deg, rgba(74,14,143,.16), rgba(5,5,7,.45));
-    border:1px solid rgba(201,168,76,.22); border-radius:4px; padding:30px 26px;
-    transition:transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+    border:1px solid rgba(201,168,76,.35); border-radius:14px; padding:30px 26px;
+    position:relative; transition:transform .35s ease, border-color .35s ease, box-shadow .35s ease;
   }
+  .arcano-card::before{ content:""; position:absolute; inset:7px; border:1px solid var(--gold-faint); border-radius:9px; pointer-events:none; }
   .arcano-card:hover{ transform:translateY(-6px); border-color:var(--gold); box-shadow:0 14px 32px rgba(0,0,0,.4); }
   .arcano-card svg{ width:34px; height:34px; color:var(--gold); margin-bottom:16px; }
   .arcano-card h3{ font-family:var(--font-struct); font-size:1.02rem; letter-spacing:.03em; color:var(--gold); margin:0 0 .55em; font-weight:500; }
@@ -136,10 +137,11 @@
   /* ---------- pacto ---------- */
   .pacto{ position:relative; z-index:1; padding:4vh 6vw 13vh; display:flex; justify-content:center; }
   .pacto__card{
-    width:100%; max-width:420px; text-align:center; padding:44px 32px;
-    background:rgba(15,15,20,.75); border:1px solid var(--amethyst); border-radius:6px;
+    width:100%; max-width:420px; text-align:center; padding:44px 32px; position:relative;
+    background:rgba(15,15,20,.75); border:1px solid var(--amethyst); border-radius:14px;
     box-shadow:0 0 44px rgba(74,14,143,.2);
   }
+  .pacto__card::before{ content:""; position:absolute; inset:7px; border:1px solid var(--gold-faint); border-radius:9px; pointer-events:none; }
   .pacto__card h2{ font-family:var(--font-display); color:var(--gold); font-size:1.6rem; margin:.1em 0 .55em; }
   .pacto__card > p{ color:var(--parchment-dim); margin:0 0 1.7em; }
   .pacto__btn{
