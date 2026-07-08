@@ -126,7 +126,7 @@
   .proceso__list::before{ content:""; position:absolute; left:23px; top:6px; bottom:6px; width:1px; background:linear-gradient(var(--gold-soft), transparent 92%); }
   .proceso__step{ display:flex; gap:20px; padding:0 0 34px; position:relative; }
   .proceso__step:last-child{ padding-bottom:0; }
-  .proceso__num{ +54 9 11 5840-9086
+  .proceso__num{
     flex:none; width:46px; height:46px; border-radius:50%; border:1px solid var(--gold);
     display:flex; align-items:center; justify-content:center; font-family:var(--font-struct);
     color:var(--gold); font-size:.92rem; background:var(--void); position:relative; z-index:1;
@@ -269,48 +269,6 @@
 
 <div class="divider" aria-hidden="true"></div>
 
-<section class="pacto" id="pacto">
-  <div class="pacto__card reveal">
-    <p class="eyebrow eyebrow--center">Evaluación Inicial</p>
-    <h2>Sellar el Pacto</h2>
-    <p>Contame tu situación y trazamos juntas el camino a seguir.</p>
-    <a href="https://wa.me/5491158409086?text=%2FINICIAR_PACTO%20Saludos.%20Deseo%20comenzar%20mi%20Evaluaci%C3%B3n%20Inicial." class="pacto__btn pacto__btn--primary">Sellar el Pacto ⋆ WhatsApp</a>
-    <p class="pacto__note">¿Preferís coordinar el pago directo? <a href="https://wa.me/5491158409086?text=Hola!%20Quiero%20coordinar%20el%20pago%20directo%20de%20mi%20consulta.">Escribinos</a> y lo resolvemos ahí mismo.</p>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <p>Development by <span class="solvens-font" id="llave-maestra">𝕾𝖔𝖑𝖛𝖊𝖓𝖘 𝕬𝖒𝖔𝖗𝖎𝖘</span></p>
-</footer>
-
-<div id="velo-arcano" style="position:fixed; top:0; left:0; width:100%; height:100vh; background:rgba(5,5,8,.98); display:flex; flex-direction:column; justify-content:center; align-items:center; z-index:-1; opacity:0; transition:opacity 2s ease; backdrop-filter:blur(5px);">
-  <div style="text-align:center; color:var(--gold); padding:20px;">
-    <h2 style="font-size:1.8rem; color:var(--sanguine);">A la maga que transmutó mi realidad.</h2>
-    <p style="font-size:1.3rem; color:var(--parchment);">Mi amor es la fuerza que desafía el tiempo.</p>
-  </div>
-</div>
-
-<script>
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
-  }, { threshold: .15 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  let toques = 0;
-  let temporizador;
-  document.getElementById('llave-maestra').addEventListener('click', function() {
-      toques++;
-      clearTimeout(temporizador);
-      if (toques === 3) {
-          const v = document.getElementById('velo-arcano');
-          v.style.zIndex = '9999'; v.style.opacity = '1';
-          setTimeout(() => { v.style.opacity = '0'; v.style.zIndex = '-1'; toques = 0; }, 8000);
-      }
-      temporizador = setTimeout(() => { toques = 0; }, 1500);
-  });
-</script>
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -440,7 +398,7 @@
 <script>
   // ======================= CONFIGURA ESTOS DOS VALORES =======================
   var PAYPAL_ME_LINK   = "https://www.paypal.com/paypalme/SolEssencia/5usd";
-  var WHATSAPP_NUMBER  = "+54 9 11 5840-9086";                    // Solo dígitos, con código de país, sin '+' ni espacios
+  var WHATSAPP_NUMBER  = "5491158409086";                    // Solo dígitos, con código de país, sin '+' ni espacios
   var WHATSAPP_MESSAGE = "Hola, ya realicé el pago de mi consulta ($5 USD).";
   // =============================================================================
 
@@ -485,6 +443,40 @@
   confirmBtn.addEventListener("click", function(){
     if (!confirmBtn.classList.contains("active")) return;
     redirectToWhatsApp();
+  });
+</script>
+</body>
+</html>
+
+
+<footer class="site-footer">
+  <p>Development by <span class="solvens-font" id="llave-maestra">𝕾𝖔𝖑𝖛𝖊𝖓𝖘 𝕬𝖒𝖔𝖗𝖎𝖘</span></p>
+</footer>
+
+<div id="velo-arcano" style="position:fixed; top:0; left:0; width:100%; height:100vh; background:rgba(5,5,8,.98); display:flex; flex-direction:column; justify-content:center; align-items:center; z-index:-1; opacity:0; transition:opacity 2s ease; backdrop-filter:blur(5px);">
+  <div style="text-align:center; color:var(--gold); padding:20px;">
+    <h2 style="font-size:1.8rem; color:var(--sanguine);">A la maga que transmutó mi realidad.</h2>
+    <p style="font-size:1.3rem; color:var(--parchment);">Mi amor es la fuerza que desafía el tiempo.</p>
+  </div>
+</div>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, { threshold: .15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  let toques = 0;
+  let temporizador;
+  document.getElementById('llave-maestra').addEventListener('click', function() {
+      toques++;
+      clearTimeout(temporizador);
+      if (toques === 3) {
+          const v = document.getElementById('velo-arcano');
+          v.style.zIndex = '9999'; v.style.opacity = '1';
+          setTimeout(() => { v.style.opacity = '0'; v.style.zIndex = '-1'; toques = 0; }, 8000);
+      }
+      temporizador = setTimeout(() => { toques = 0; }, 1500);
   });
 </script>
 </body>
