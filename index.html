@@ -14,7 +14,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root{
-    /* Main Theme Variables */
     --void:#050507; --void-2:#0c0c12;
     --amethyst:#4A0E8F; --amethyst-deep:#25073f;
     --sanguine:#5c0f1c;
@@ -24,19 +23,13 @@
     --font-display:'Cinzel Decorative', serif;
     --font-struct:'Cinzel', serif;
     --font-body:'IM Fell English', serif;
-    
-    /* Modal Variables */
-    --ink: #1a1420;
-    --ink-2: #241c2c;
   }
-  
   *,*::before,*::after{ box-sizing:border-box; }
   html{ scroll-behavior:smooth; }
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
     *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
   }
-  
   body{
     margin:0; background:var(--void); color:var(--parchment); font-family:var(--font-body);
     line-height:1.7; overflow-x:hidden; position:relative;
@@ -141,7 +134,7 @@
   .proceso__step h3{ margin:.15em 0 .3em; font-family:var(--font-struct); font-size:1rem; color:var(--parchment); font-weight:500; }
   .proceso__step p{ margin:0; font-size:.95rem; color:var(--parchment-dim); }
 
-  /* ---------- pacto (Call to Action) ---------- */
+  /* ---------- consults ---------- */
   .pacto{ position:relative; z-index:1; padding:4vh 6vw 13vh; display:flex; justify-content:center; }
   .pacto__card{
     width:100%; max-width:420px; text-align:center; padding:44px 32px; position:relative;
@@ -154,87 +147,16 @@
   .pacto__btn{
     display:block; width:100%; padding:17px 0; font-family:var(--font-struct);
     text-transform:uppercase; letter-spacing:.14em; font-size:.84rem; text-decoration:none;
-    border-radius:4px; transition:transform .25s ease, box-shadow .25s ease; cursor:pointer;
+    border-radius:4px; transition:transform .25s ease, box-shadow .25s ease;
   }
   .pacto__btn--primary{ background:linear-gradient(45deg, var(--sanguine), var(--amethyst)); color:var(--parchment); border:1px solid var(--gold); }
   .pacto__btn--primary:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.45); }
+  .pacto__note{ margin-top:1.5em; font-size:.85rem; color:rgba(237,227,204,.58); }
+  .pacto__note a{ color:var(--gold); text-decoration:underline; }
 
-  /* ---------- footer ---------- */
+  /* ---------- footer (preservado) ---------- */
   .site-footer{ position:relative; z-index:1; padding:40px 20px 56px; text-align:center; font-family:var(--font-struct); color:#6b7280; font-size:.85rem; }
   .solvens-font{ cursor:pointer; color:var(--parchment); font-size:1.5rem; letter-spacing:.12em; }
-
-  /* ---------- Modal Styles ---------- */
-  .modal-overlay{
-    position:fixed; inset:0; background: rgba(10,8,14,.85);
-    display:flex; align-items:center; justify-content:center;
-    opacity:0; pointer-events:none; transition: opacity .25s ease;
-    padding: 20px; z-index: 999;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  }
-  .modal-overlay.open{ opacity:1; pointer-events:auto; }
-
-  .modal{
-    width: 100%; max-width: 420px;
-    background: linear-gradient(180deg, var(--ink-2), var(--ink));
-    border: 1px solid rgba(201,168,76,.35);
-    border-radius: 6px;
-    padding: 32px 28px 28px;
-    position: relative;
-    transform: scale(.96) translateY(8px);
-    transition: transform .25s ease;
-  }
-  .modal-overlay.open .modal{ transform: scale(1) translateY(0); }
-
-  .modal-close{
-    position:absolute; top:14px; right:16px;
-    background:none; border:none; color: var(--parchment);
-    font-size: 22px; opacity:.6; cursor:pointer; line-height:1;
-  }
-  .modal-close:hover{ opacity:1; }
-
-  .modal-title{
-    font-family: var(--font-display);
-    font-size: 28px; letter-spacing:.03em; margin: 0 0 8px;
-    color: var(--parchment);
-  }
-  .modal-sub{
-    font-size: 14px; line-height:1.5; opacity:.78; margin: 0 0 20px;
-  }
-  .modal-sub strong{ color: var(--gold); font-weight:600; }
-
-  .sigil-divider{
-    display:flex; align-items:center; gap:10px; margin: 4px 0 22px;
-    color: var(--gold); opacity:.7;
-  }
-  .sigil-divider::before, .sigil-divider::after{
-    content:""; flex:1; height:1px; background: currentColor; opacity:.5;
-  }
-  .sigil-divider span{ font-size:11px; letter-spacing:.18em; text-transform:uppercase; }
-
-  .pay-btn{
-    display:block; text-align:center; text-decoration:none;
-    font-family: 'Inter', system-ui, sans-serif; font-weight:600; font-size:15px;
-    background: linear-gradient(180deg, var(--gold), #a5813a);
-    color: var(--void); border-radius: 4px; padding: 13px 0; cursor:pointer;
-  }
-  .pay-btn:hover{ filter: brightness(1.06); }
-
-  .confirm-btn{
-    display:block; width:100%; margin-top:10px;
-    font-family: 'Inter', system-ui, sans-serif; font-size:14px;
-    background: transparent; color: var(--parchment);
-    border: 1px solid rgba(237,227,204,.35); border-radius:4px;
-    padding: 11px 0; cursor:pointer; opacity:.6; pointer-events:none;
-    transition: opacity .2s ease;
-  }
-  .confirm-btn.active{ opacity:1; pointer-events:auto; border-color: var(--gold); }
-  .confirm-btn:hover.active{ background: rgba(201,168,76,.1); }
-
-  .status-line{
-    margin-top: 14px; font-size: 13px; text-align:center; min-height: 18px;
-  }
-  .status-line.ok{ color: #8fd6a8; }
-  .status-line.err{ color: #e08a8a; }
 
   @media (max-width:480px){
     .hero__ring{ width:225px; height:225px; }
@@ -271,4 +193,284 @@
       <path d="M180 36 C173 31 162 27 151 30" stroke="var(--gold)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.85"/>
     </svg>
     <div class="hero__cover">
-      <img src="data:image/jpeg;base64,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
+      <img src="https://tinyurl.com/2w3f7kmh" alt="Essentia Serpentis Arcana"> </div>
+    <div class="hero__badge">
+      <img src="assets/IMG-20260528-WA0002.jpg" alt="" onerror="this.style.opacity=0">
+      <div class="hero__seal" aria-hidden="true"><span>ESA</span></div>
+    </div>
+  </div>
+  <p class="eyebrow">Portal Arcano · Buenos Aires</p>
+  <h1>Essentia Serpentis Arcana</h1>
+  <p class="hero__tag">Donde la serpiente se muerde la cola y el instante se transmuta en revelación.</p>
+  <a href="#umbral" class="hero__scroll">Cruzar el umbral <span aria-hidden="true">↓</span></a>
+</header>
+
+<section class="umbral" id="umbral">
+  <div class="umbral__inner reveal">
+    <p class="umbral__lead"><span class="dropcap">E</span>n cada consulta se abre un umbral: el punto exacto donde lo oculto —aquello que aún no tiene nombre— empieza a tomar forma. No prometo certezas fabricadas ni futuros cerrados; ofrezco un espacio de lectura, escucha y trabajo energético serio, donde vos traés la pregunta y el proceso trae la claridad.</p>
+    <blockquote class="umbral__quote">El Arcano no se impone.<br>Se revela a quien está listo para mirarlo.</blockquote>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"></div>
+
+<section class="arcanos" id="arcanos">
+  <p class="eyebrow eyebrow--center reveal">Los Arcanos</p>
+  <h2 class="reveal">Cuatro formas de trabajar lo oculto</h2>
+  <div class="arcanos__grid reveal">
+    <div class="arcano-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 8l1.2 2.4L16 11l-2.8.6L12 14l-1.2-2.4L8 11l2.8-.6z"/></svg>
+      <h3>El Oráculo</h3>
+      <p>Lectura de tarot para leer el patrón detrás del ruido: vínculos, decisiones, ciclos que se repiten.</p>
+    </div>
+    <div class="arcano-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3c3 3 5 6 5 9a5 5 0 0 1-10 0c0-1.5.6-2.6 1.3-3.6.2 1 .9 1.6 1.7 1.6-.3-2 .3-4.2 2-7z"/></svg>
+      <h3>La Purificación</h3>
+      <p>Limpieza y protección energética para cerrar lo que ya no corresponde sostener.</p>
+    </div>
+    <div class="arcano-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M15 3a8 8 0 1 0 0 18 7 7 0 0 1 0-18z"/><path d="M19 4l.6 1.3L21 6l-1.4.6L19 8l-.6-1.4L17 6l1.4-.7z" fill="currentColor" stroke="none"/></svg>
+      <h3>El Ascendente</h3>
+      <p>Lectura astral para entender el mapa con el que llegaste y el que estás construyendo.</p>
+    </div>
+    <div class="arcano-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7l4.3 7.5H7.7z"/></svg>
+      <h3>La Transmutación</h3>
+      <p>Ritual diseñado a medida para acompañar un cierre, un comienzo o un pedido específico.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"></div>
+
+<section class="proceso" id="proceso">
+  <p class="eyebrow eyebrow--center reveal">El Proceso</p>
+  <h2 class="reveal">Cómo se construye el trabajo</h2>
+  <ol class="proceso__list reveal">
+    <li class="proceso__step">
+      <span class="proceso__num" aria-hidden="true">I</span>
+      <div><h3>Evaluación Inicial</h3><p>Contás tu situación por WhatsApp. Se aplica pago parcial.</p></div>
+    </li>
+    <li class="proceso__step">
+      <span class="proceso__num" aria-hidden="true">II</span>
+      <div><h3>Diagnóstico</h3><p>Defino qué trabajo corresponde y cómo se estructura.</p></div>
+    </li>
+    <li class="proceso__step">
+      <span class="proceso__num" aria-hidden="true">III</span>
+      <div><h3>El Rito</h3><p>Se realiza la lectura, limpieza o ritual acordado.</p></div>
+    </li>
+    <li class="proceso__step">
+      <span class="proceso__num" aria-hidden="true">IV</span>
+      <div><h3>Seguimiento</h3><p>Cierre del proceso y, si hace falta, próximos pasos.</p></div>
+    </li>
+  </ol>
+</section>
+
+<div class="divider" aria-hidden="true"></div>
+
+<section class="pacto" id="pacto">
+  <div class="pacto__card reveal">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Essentia Serpentis Arcana — Umbral de consulta</title>
+<style>
+  :root{
+    --ink: #1a1420;
+    --ink-2: #241c2c;
+    --gold: #c9a24b;
+    --parchment: #ece6d8;
+    --teal: #2d4a4a;
+    --wine: #5c2a2a;
+  }
+  *{ box-sizing: border-box; }
+  body{
+    margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+    background: var(--ink);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--parchment);
+
+  .demo-hint{ position:fixed; top:16px; left:16px; right:16px; font-size:12px; opacity:.55; text-align:center; }
+
+  .start-btn{
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 20px; letter-spacing: .04em;
+    background: linear-gradient(180deg, var(--gold), #a5813a);
+    color: var(--ink); border:none; border-radius: 4px;
+    padding: 16px 32px; cursor:pointer;
+    box-shadow: 0 4px 18px rgba(201,162,75,.25);
+  }
+  .start-btn:hover{ filter: brightness(1.06); }
+
+  .modal-overlay{
+    position:fixed; inset:0; background: rgba(10,8,14,.72);
+    display:flex; align-items:center; justify-content:center;
+    opacity:0; pointer-events:none; transition: opacity .25s ease;
+    padding: 20px; z-index: 999;
+  }
+  .modal-overlay.open{ opacity:1; pointer-events:auto; }
+
+  .modal{
+    width: 100%; max-width: 420px;
+    background: linear-gradient(180deg, var(--ink-2), var(--ink));
+    border: 1px solid rgba(201,162,75,.35);
+    border-radius: 6px;
+    padding: 32px 28px 28px;
+    position: relative;
+    transform: scale(.96) translateY(8px);
+    transition: transform .25s ease;
+  }
+  .modal-overlay.open .modal{ transform: scale(1) translateY(0); }
+
+  .modal-close{
+    position:absolute; top:14px; right:16px;
+    background:none; border:none; color: var(--parchment);
+    font-size: 22px; opacity:.6; cursor:pointer; line-height:1;
+  }
+  .modal-close:hover{ opacity:1; }
+
+  .modal-title{
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 28px; letter-spacing:.03em; margin: 0 0 8px;
+    color: var(--parchment);
+  }
+  .modal-sub{
+    font-size: 14px; line-height:1.5; opacity:.78; margin: 0 0 20px;
+  }
+  .modal-sub strong{ color: var(--gold); font-weight:600; }
+
+  .sigil-divider{
+    display:flex; align-items:center; gap:10px; margin: 4px 0 22px;
+    color: var(--gold); opacity:.7;
+  }
+  .sigil-divider::before, .sigil-divider::after{
+    content:""; flex:1; height:1px; background: currentColor; opacity:.5;
+  }
+  .sigil-divider span{ font-size:11px; letter-spacing:.18em; text-transform:uppercase; }
+
+  .pay-btn{
+    display:block; text-align:center; text-decoration:none;
+    font-family: 'Inter', system-ui, sans-serif; font-weight:600; font-size:15px;
+    background: linear-gradient(180deg, var(--gold), #a5813a);
+    color: var(--ink); border-radius: 4px; padding: 13px 0; cursor:pointer;
+  }
+  .pay-btn:hover{ filter: brightness(1.06); }
+
+  .confirm-btn{
+    display:block; width:100%; margin-top:10px;
+    font-family: 'Inter', system-ui, sans-serif; font-size:14px;
+    background: transparent; color: var(--parchment);
+    border: 1px solid rgba(236,230,216,.35); border-radius:4px;
+    padding: 11px 0; cursor:pointer; opacity:.6; pointer-events:none;
+    transition: opacity .2s ease;
+  }
+  .confirm-btn.active{ opacity:1; pointer-events:auto; border-color: var(--gold); }
+  .confirm-btn:hover.active{ background: rgba(201,162,75,.1); }
+
+  .status-line{
+    margin-top: 14px; font-size: 13px; text-align:center; min-height: 18px;
+  }
+  .status-line.ok{ color: #8fd6a8; }
+  .status-line.err{ color: #e08a8a; }
+
+<button class="start-btn" id="startConsultBtn">Iniciar consulta — $5 USD</button>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Cerrar">&times;</button>
+    <h2 class="modal-title">Cruza el umbral</h2>
+    <p class="modal-sub">Tu consulta con <strong>Essentia Serpentis Arcana</strong> comienza con un pago parcial de <strong>$5 USD</strong>. Paga en PayPal y confirma aquí abajo para continuar a WhatsApp.</p>
+    <div class="sigil-divider"><span>Pago seguro vía PayPal</span></div>
+
+    <a id="paypalPayBtn" class="pay-btn" href="#" target="_blank" rel="noopener">Pagar $5 con PayPal</a>
+    <button class="confirm-btn" id="confirmPaidBtn">Ya pagué — continuar a WhatsApp</button>
+    <div class="status-line" id="statusLine"></div>
+  </div>
+</div>
+
+<script>
+  // ======================= CONFIGURA ESTOS DOS VALORES =======================
+  var PAYPAL_ME_LINK   = "https://www.paypal.com/paypalme/SolEssencia/5usd";
+  var WHATSAPP_NUMBER  = "5491158409086";                    // Solo dígitos, con código de país, sin '+' ni espacios
+  var WHATSAPP_MESSAGE = "Hola, ya realicé el pago de mi consulta ($5 USD).";
+  // =============================================================================
+
+  var waLink = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
+  document.getElementById("paypalPayBtn").href = PAYPAL_ME_LINK;
+
+  var overlay = document.getElementById("modalOverlay");
+  var statusLine = document.getElementById("statusLine");
+
+  function openModal(){ overlay.classList.add("open"); }
+  function closeModal(){ overlay.classList.remove("open"); }
+
+  document.getElementById("startConsultBtn").addEventListener("click", openModal);
+  document.getElementById("modalClose").addEventListener("click", closeModal);
+  overlay.addEventListener("click", function(e){ if (e.target === overlay) closeModal(); });
+
+  function setStatus(text, cls){
+    statusLine.textContent = text || "";
+    statusLine.className = "status-line" + (cls ? " " + cls : "");
+  }
+
+  function redirectToWhatsApp(){
+    setStatus("Pago confirmado. Abriendo WhatsApp...", "ok");
+    setTimeout(function(){ window.location.href = waLink; }, 1200);
+  }
+
+  var confirmBtn = document.getElementById("confirmPaidBtn");
+
+  document.getElementById("paypalPayBtn").addEventListener("click", function(){
+    setStatus("Cuando termines de pagar en PayPal, vuelve a esta pestaña y confirma abajo.");
+    confirmBtn.classList.add("active");
+  });
+
+  // Nice-to-have: if they switch back to this tab after visiting PayPal,
+  // nudge the confirm button — does not "verify" payment, just UX polish.
+  document.addEventListener("visibilitychange", function(){
+    if (document.visibilityState === "visible" && confirmBtn.classList.contains("active")){
+      confirmBtn.focus();
+    }
+  });
+
+  confirmBtn.addEventListener("click", function(){
+    if (!confirmBtn.classList.contains("active")) return;
+    redirectToWhatsApp();
+  });
+</div>
+</section>
+
+<footer class="site-footer">
+  <p>Development by <span class="solvens-font" id="llave-maestra">𝕾𝖔𝖑𝖛𝖊𝖓𝖘 𝕬𝖒𝖔𝖗𝖎𝖘</span></p>
+</footer>
+
+<div id="velo-arcano" style="position:fixed; top:0; left:0; width:100%; height:100vh; background:rgba(5,5,8,.98); display:flex; flex-direction:column; justify-content:center; align-items:center; z-index:-1; opacity:0; transition:opacity 2s ease; backdrop-filter:blur(5px);">
+  <div style="text-align:center; color:var(--gold); padding:20px;">
+    <h2 style="font-size:1.8rem; color:var(--sanguine);">A la maga que transmutó mi realidad.</h2>
+    <p style="font-size:1.3rem; color:var(--parchment);">Mi amor es la fuerza que desafía el tiempo.</p>
+  </div>
+</div>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, { threshold: .15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  let toques = 0;
+  let temporizador;
+  document.getElementById('llave-maestra').addEventListener('click', function() {
+      toques++;
+      clearTimeout(temporizador);
+      if (toques === 3) {
+          const v = document.getElementById('velo-arcano');
+          v.style.zIndex = '9999'; v.style.opacity = '1';
+          setTimeout(() => { v.style.opacity = '0'; v.style.zIndex = '-1'; toques = 0; }, 8000);
+      }
+      temporizador = setTimeout(() => { toques = 0; }, 1500);
+  });
+</script>
+</body>
+</html>
